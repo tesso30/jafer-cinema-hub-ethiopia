@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -62,7 +61,7 @@ export default function ContactSection({ language }: ContactSectionProps) {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.682045577946!2d38.789141799999996!3d8.9989417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85bc4dbbd34f%3A0x280e686aec5eb8e7!2sPiassa%2C%20Addis%20Ababa%2C%20Ethiopia!5e0!3m2!1sen!2sus!4v1716490161641!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6063262218495!2d38.76714937447872!3d9.022033689148096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b8f56ae689e3f%3A0x115035626208ea8b!2sBest%20Friends!5e0!3m2!1sen!2sus!4v1716492455744!5m2!1sen!2sus"
             style={{ border: 0, borderRadius: '12px', width: '100%', height: '400px' }}
             allowFullScreen
             loading="lazy"
