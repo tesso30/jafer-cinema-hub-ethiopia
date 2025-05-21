@@ -62,7 +62,7 @@ export default function ContactSection({ language }: ContactSectionProps) {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.8884423053864!2d38.78947318482829!3d8.953812493606357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85cef5ab402d%3A0xab7d3ca23c1766cf!2sXQ3R%2BGMF%2C%20Addis%20Ababa%2C%20Ethiopia!5e0!3m2!1sen!2sus!4v1716489132589!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.682045577946!2d38.789141799999996!3d8.9989417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85bc4dbbd34f%3A0x280e686aec5eb8e7!2sPiassa%2C%20Addis%20Ababa%2C%20Ethiopia!5e0!3m2!1sen!2sus!4v1716490161641!5m2!1sen!2sus"
             style={{ border: 0, borderRadius: '12px', width: '100%', height: '400px' }}
             allowFullScreen
             loading="lazy"
