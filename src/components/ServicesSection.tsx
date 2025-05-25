@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { cn } from "@/lib/utils";
-import { Tv, Gamepad, Speaker, Computer, Star, Clock, Users, CheckCircle } from "lucide-react";
+import { Tv, Gamepad, Speaker, Computer, Star, Clock, Users, CheckCircle, Satellite } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 type Language = 'en' | 'am' | 'or';
@@ -23,6 +22,13 @@ export default function ServicesSection({ language }: ServicesSectionProps) {
         features: ["Free diagnosis", "Same-day service", "1-year warranty", "All brands supported"],
         price: "Starting from 200 ETB",
         duration: "30-90 minutes"
+      },
+      dishService: {
+        title: "DISH Installation",
+        description: "Professional DISH satellite installation and setup with optimal signal positioning, receiver configuration, and channel programming.",
+        features: ["Signal optimization", "Multi-room setup", "HD/4K programming", "Professional mounting"],
+        price: "Starting from 500 ETB",
+        duration: "120-240 minutes"
       },
       gameService: {
         title: "Gaming Console Support",
@@ -69,6 +75,13 @@ export default function ServicesSection({ language }: ServicesSectionProps) {
         price: "ከ200 ብር ጀምሮ",
         duration: "30-90 ደቂቃዎች"
       },
+      dishService: {
+        title: "DISH ማስገጃ",
+        description: "ሙያዊ DISH ሳተላይት ማስገጃ እና ማዋቀር ከምርጥ ሲግናል አቀማመጥ፣ ተቀባይ ውቅር እና የቻናል ፕሮግራሚንግ ጋር።",
+        features: ["የሲግናል ማመቻቸት", "የበርካታ ክፍል ማዋቀር", "HD/4K ፕሮግራሚንግ", "ሙያዊ ማስገጫ"],
+        price: "ከ500 ብር ጀምሮ",
+        duration: "120-240 ደቂቃዎች"
+      },
       gameService: {
         title: "የጨዋታ ኮንሶል ድጋፍ",
         description: "ለፕሌይስቴሽን፣ ኤክስቦክስ፣ ኒንቴንዶ እና ፒሲ የጨዋታ ስርዓቶች ባለሙያ ውቅር፣ ችግር መፍታት፣ ጥገና እና ማመቻቸት።",
@@ -85,7 +98,7 @@ export default function ServicesSection({ language }: ServicesSectionProps) {
       },
       computerService: {
         title: "ኮምፒውተር እና መሳሪያ ድጋፍ",
-        description: "ለኮምፒውተሮች፣ ላፕቶፖች፣ ስማርትፎኖች እና ታብሌቶች ባለሙያ የሃርድዌር እና ሶፍትዌር መፍትሄዎች ከውሂብ ጥበቃ ጋር።",
+        description: "ለኮምፒውተሮች፣ ላፕቶportoች፣ ስማርትፎኖች እና ታብሌቶች ባለሙያ የሃርድዌር እና ሶፍትዌር መፍትሄዎች ከውሂብ ጥበቃ ጋር።",
         features: ["የውሂብ ማግኛ", "ቫይረስ ማስወገድ", "የሃርድዌር ማሻሻያዎች", "የስርዓት ማመቻቸት"],
         price: "ከ100 ብር ጀምሮ",
         duration: "30-240 ደቂቃዎች"
@@ -113,6 +126,13 @@ export default function ServicesSection({ language }: ServicesSectionProps) {
         features: ["Qorannoo bilisaa", "Tajaajila guyyaa", "Waadaa waggaa tokkoo", "Braandii hundi ni deeggarnama"],
         price: "Qarshii 200 irraa kaasee",
         duration: "Daqiiqaa 30-90"
+      },
+      dishService: {
+        title: "Dhaabbii DISH",
+        description: "Dhaabbii fi qophii saatalaayitii DISH ogummaa mallattoo gaarii ta'e, qindaa'ina fudhattuu fi sagantaa chaanaalii waliin.",
+        features: ["Fooyya'iinsa mallattoo", "Qophii kutaa hedduudhaa", "Sagantaa HD/4K", "Dhaabbii ogummaa"],
+        price: "Qarshii 500 irraa kaasee",
+        duration: "Daqiiqaa 120-240"
       },
       gameService: {
         title: "Deeggarsa Konsolii Geemii",
@@ -157,6 +177,12 @@ export default function ServicesSection({ language }: ServicesSectionProps) {
       icon: Tv,
       color: 'text-blue-400',
       bgColor: 'bg-blue-400/20'
+    },
+    {
+      key: 'dishService',
+      icon: Satellite,
+      color: 'text-cyan-400',
+      bgColor: 'bg-cyan-400/20'
     },
     {
       key: 'gameService',
@@ -297,7 +323,7 @@ export default function ServicesSection({ language }: ServicesSectionProps) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-12">
         {services.map((service) => (
           <ServiceCard
             key={service.key}
