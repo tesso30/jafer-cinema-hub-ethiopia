@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -26,8 +25,8 @@ export default function ContactSection({ language }: ContactSectionProps) {
       title: "Get In Touch With Us",
       subtitle: "Visit our store, send us a message, or call us directly. We're here to help with all your movie and electronics needs.",
       address: "123 Cinema Street, Addis Ababa, Ethiopia",
-      phone: "+251 91 234 5678",
-      email: "info@jafersmovies.com",
+      phone: "+251912340888",
+      email: "jafer@gmail.com",
       hours: "Mon-Sun: 8:00 AM - 10:00 PM",
       formTitle: "Send Us a Message",
       namePlaceholder: "Your full name",
@@ -68,8 +67,8 @@ export default function ContactSection({ language }: ContactSectionProps) {
       title: "ከእኛ ጋር ይገናኙ",
       subtitle: "መደብራችንን ይጎብኙ፣ መልዕክት ይላኩልን ወይም በቀጥታ ይደውሉልን። ለሁሉም የፊልም እና የኤሌክትሮኒክስ ፍላጎቶችዎ እዚህ ነን።",
       address: "123 የሲኒማ መንገድ፣ አዲስ አበባ፣ ኢትዮጵያ",
-      phone: "+251 91 234 5678",
-      email: "info@jafersmovies.com",
+      phone: "+251912340888",
+      email: "jafer@gmail.com",
       hours: "ሰኞ-እሁድ: 8:00 ጥዋት - 10:00 ማታ",
       formTitle: "መልዕክት ይላኩልን",
       namePlaceholder: "ሙሉ ስምዎ",
@@ -110,8 +109,8 @@ export default function ContactSection({ language }: ContactSectionProps) {
       title: "Nu Quunnamaa",
       subtitle: "Duka'ana keenya daawwadhu, ergaa nuuf ergi ykn kallattiin nu bilbili. Barbaachisummaa fiilmii fi elektrooniksii keessan hundaaf asii jirra.",
       address: "123 Daandii Ciinimaa, Finfinnee, Itoophiyaa",
-      phone: "+251 91 234 5678",
-      email: "info@jafersmovies.com",
+      phone: "+251912340888",
+      email: "jafer@gmail.com",
       hours: "Wiixata-Dilbata: 8:00 ganama - 10:00 galgala",
       formTitle: "Ergaa Nuuf Ergi",
       namePlaceholder: "Maqaa kee guutuu",
