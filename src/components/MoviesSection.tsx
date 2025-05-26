@@ -118,6 +118,64 @@ export default function MoviesSection({ language }: MoviesSectionProps) {
     {
       id: 2,
       title: {
+        en: "Parasite",
+        am: "ፓራሳይት",
+        or: "Paraasaayitii"
+      },
+      genre: "Thriller, Drama, Black Comedy",
+      year: 2019,
+      duration: "132",
+      rating: 8.6,
+      tag: "trending",
+      poster: "https://m.media-amazon.com/images/M/MV5BYWZjMjk3ZTItODQ2ZC00NTY5LWE0ZDYtZTI3MjcwN2Q5NTVkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg",
+      description: {
+        en: "A South Korean masterpiece about class warfare.",
+        am: "ስለ ክፍል ጦርነት የደቡብ ኮሪያ ድንቅ ፊልም።",
+        or: "Waa'ee waraana kutaa Koreea Kibbaa masterpiece."
+      }
+    },
+    {
+      id: 3,
+      title: {
+        en: "Dune",
+        am: "ዱን",
+        or: "Duunii"
+      },
+      genre: "Sci-Fi, Adventure, Drama",
+      year: 2021,
+      duration: "155",
+      rating: 8.0,
+      tag: "trending",
+      poster: "https://m.media-amazon.com/images/M/MV5BN2FjNmEyNWMtYzM0ZS00NjIyLTg5YzYtYThlMGVjNzE1OGViXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+      description: {
+        en: "Epic space opera based on Frank Herbert's novel.",
+        am: "በፍራንክ ሄርበርት ልብወለድ ላይ የተመሰረተ ኤፒክ የጠፈር ኦፔራ።",
+        or: "Walbii Frank Herbert irratti hundaa'e epic space opera."
+      }
+    },
+    {
+      id: 4,
+      title: {
+        en: "Everything Everywhere All at Once",
+        am: "ሁሉም ነገር በሁሉም ቦታ በአንድ ጊዜ",
+        or: "Wanti Hundi Bakka Hundatti Yeroo Tokkotti"
+      },
+      genre: "Sci-Fi, Comedy, Action",
+      year: 2022,
+      duration: "139",
+      rating: 7.8,
+      tag: "trending",
+      poster: "https://m.media-amazon.com/images/M/MV5BYTdiOTIyZTQtNmQ1OS00NjZlLWIyMTgtYzk5Y2M3ZDVmMDk1XkEyXkFqcGdeQXVyMTAzMDg4NzU0._V1_.jpg",
+      description: {
+        en: "A multiverse adventure with emotional depth.",
+        am: "ስሜታዊ ጥልቀት ያለው የብዙ አለም ጀብደኝነት።",
+        or: "Adventure multiverse miira gadi fagoo qabu."
+      }
+    },
+
+    {
+      id: 5,
+      title: {
         en: "Oppenheimer",
         am: "ኦፔንሃይመር",
         or: "Oppenhayimerii"
@@ -133,8 +191,295 @@ export default function MoviesSection({ language }: MoviesSectionProps) {
         am: "የአሜሪካዊው ሳይንቲስት ጄ. ሮበርት ኦፔንሃይመር ታሪክ።",
         or: "Seenaa saayintistii Amerikaa J. Robert Oppenheimer."
       }
+    },
+    {
+      id: 6,
+      title: {
+        en: "Barbie",
+        am: "ባርቢ",
+        or: "Baarbii"
+      },
+      genre: "Comedy, Adventure, Fantasy",
+      year: 2023,
+      duration: "114",
+      rating: 6.9,
+      tag: "new",
+      poster: "https://m.media-amazon.com/images/M/MV5BNjU3N2QxNzYtMjk1NC00MTc4LTk1NTQtMmUxNTljM2I0NDA5XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg",
+      description: {
+        en: "A colorful journey of self-discovery in Barbie Land.",
+        am: "በባርቢ ላንድ ውስጥ የራስን ማወቅ ጉዞ።",
+        or: "Imala of baqaquu mataa Barbie Land keessatti."
+      }
+    },
+    {
+      id: 7,
+      title: {
+        en: "The Woman King",
+        am: "የሴት ንጉስ",
+        or: "Dubartii Mootii"
+      },
+      genre: "Action, Drama, History",
+      year: 2022,
+      duration: "135",
+      rating: 6.9,
+      tag: "new",
+      poster: "https://m.media-amazon.com/images/M/MV5BMjE5NDcyNjAyN15BMl5BanBnXkFtZTgwMzkwODI4NzM@._V1_.jpg",
+      description: {
+        en: "Epic tale of the Agojie warriors of Dahomey.",
+        am: "የዳሆሜ አጎጄ ተዋጊዎች ኤፒክ ታሪክ።",
+        or: "Seena epic loltoota Agojie Dahomey."
+      }
+    },
+    {
+      id: 8,
+      title: {
+        en: "RRR",
+        am: "አር አር አር",
+        or: "Aarii Aarii Aarii"
+      },
+      genre: "Action, Drama, Adventure",
+      year: 2022,
+      duration: "187",
+      rating: 7.9,
+      tag: "new",
+      poster: "https://m.media-amazon.com/images/M/MV5BODUwNDNjYzctODUxNy00ZTA2LWIyYTEtMDc5Y2E5ZjBmNTMzXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg",
+      description: {
+        en: "Indian epic action drama about friendship and revolution.",
+        am: "ስለ ወዳጅነት እና አብዮት የህንድ ኤፒክ ድራማ።",
+        or: "Drama epic Hindii waa'ee aangoo fi raashii."
+      }
+    },
+
+    {
+      id: 9,
+      title: {
+        en: "The Godfather",
+        am: "ዘ ጎድፋዘር",
+        or: "Godfaazerii"
+      },
+      genre: "Crime, Drama",
+      year: 1972,
+      duration: "175",
+      rating: 9.2,
+      tag: "old",
+      poster: "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+      description: {
+        en: "The aging patriarch of an organized crime dynasty.",
+        am: "የተደራጀ ወንጀል ሥርወ መንግሥት እየረገ ያለ አባት።",
+        or: "Abbaa mana mootummaa yakka qindaa'e dulloomaa."
+      }
+    },
+    {
+      id: 10,
+      title: {
+        en: "Seven Samurai",
+        am: "ሰባት ሳሙራይ",
+        or: "Torba Samuraayii"
+      },
+      genre: "Action, Drama, Adventure",
+      year: 1954,
+      duration: "207",
+      rating: 8.6,
+      tag: "old",
+      poster: "https://m.media-amazon.com/images/M/MV5BMTU4MDgxNzI5M15BMl5BanBnXkFtZTgwODk2NDM5NjE@._V1_.jpg",
+      description: {
+        en: "Akira Kurosawa's masterpiece about honor and sacrifice.",
+        am: "የአኪራ ኩሮሳዋ ስለ ክብር እና መስዋዕትነት ድንቅ ተራማ።",
+        or: "Hojii ajaa'ibaa Akira Kurosawa waa'ee ulfina fi aarsaa."
+      }
+    },
+    {
+      id: 11,
+      title: {
+        en: "Citizen Kane",
+        am: "ዜጋ ኬን",
+        or: "Lammii Keenii"
+      },
+      genre: "Drama, Mystery",
+      year: 1941,
+      duration: "119",
+      rating: 8.3,
+      tag: "old",
+      poster: "https://m.media-amazon.com/images/M/MV5BYjBiOTYxZWItSzBhOC00Nzg2LTg1OTEtMDhjNTEyODc4YTEyXkEyXkFqcGdeQXVyODkzNTA0ODQ@._V1_.jpg",
+      description: {
+        en: "Orson Welles' groundbreaking film about power and corruption.",
+        am: "የኦርሰን ዌልስ ስለ ሥልጣን እና ሙስና አዲስ ፊልም።",
+        or: "Film haaraa Orson Welles waa'ee aangoo fi raashii."
+      }
+    },
+    {
+      id: 12,
+      title: {
+        en: "8½",
+        am: "8½",
+        or: "8½"
+      },
+      genre: "Drama, Fantasy",
+      year: 1963,
+      duration: "138",
+      rating: 8.0,
+      tag: "old",
+      poster: "https://m.media-amazon.com/images/M/MV5BYzU5ZmJiMGUtNmQ1OS00MGQ1LTk3ZTItOTU2OTZjNmU5NTk1XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_.jpg",
+      description: {
+        en: "Fellini's surreal exploration of artistic creation.",
+        am: "የፈሊኒ ስለ ጥበባዊ ፍጥረት ወጣ ያለ ዳሰሳ።",
+        or: "Qorannoo surreal Fellini waa'ee uumsa artiistikii."
+      }
+    },
+
+    {
+      id: 13,
+      title: {
+        en: "Deadpool 3",
+        am: "ዴድፑል 3",
+        or: "Deedpuul 3"
+      },
+      genre: "Action, Comedy, Superhero",
+      year: 2024,
+      duration: "120",
+      rating: 0.0,
+      tag: "upcoming",
+      poster: "https://m.media-amazon.com/images/M/MV5BNzRiMjg0MzUtNTQ1Mi00Y2Q5LWEwM2MtMzUwZDU5NmVjN2NkXkEyXkFqcGdeQXVyMTI2MzY1MjM1._V1_.jpg",
+      description: {
+        en: "The merc with a mouth returns in the MCU.",
+        am: "በ MCU ውስጥ አፍ ያለው ተዋጊ ተመለሰ።",
+        or: "Loltuu afaan qabu MCU keessatti deebi'e."
+      }
+    },
+    {
+      id: 14,
+      title: {
+        en: "Dune: Part Two",
+        am: "ዱን: ክፍል ሁለት",
+        or: "Duunii: Kutaa Lama"
+      },
+      genre: "Sci-Fi, Adventure, Drama",
+      year: 2024,
+      duration: "165",
+      rating: 0.0,
+      tag: "upcoming",
+      poster: "https://m.media-amazon.com/images/M/MV5BNjU3N2QxNzYtMjk1NC00MTc4LTk1NTQtMmUxNTljM2I0NDA5XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg",
+      description: {
+        en: "Paul Atreides unites with Chani and the Fremen.",
+        am: "ፖል አትሬይድስ ከቻኒ እና ከፍሬመን ጋር ተባበረ።",
+        or: "Paul Atreides Chani fi Fremen waliin walitti makame."
+      }
+    },
+
+    {
+      id: 15,
+      title: {
+        en: "Spirited Away",
+        am: "የተነሳሰ",
+        or: "Kan Kakaase"
+      },
+      genre: "Animation, Adventure, Family",
+      year: 2001,
+      duration: "125",
+      rating: 9.3,
+      tag: "old",
+      poster: "https://m.media-amazon.com/images/M/MV5BMjlmZmI5MDctNDE2YS00YWE0LWE5ZWItZDBhYWQ0NTcxNWRhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+      description: {
+        en: "Miyazaki's magical tale of a girl in a spirit world.",
+        am: "የሚያዛኪ ስለ አንዲት ልጃገረድ በመንፈስ አለም ውስጥ አስማታዊ ታሪክ።",
+        or: "Seenaa falfalaa Miyazaki waa'ee intalaa addunyaa hafuuraa keessatti."
+      }
+    },
+    {
+      id: 16,
+      title: {
+        en: "Amélie",
+        am: "አሜሊ",
+        or: "Ameelii"
+      },
+      genre: "Romance, Comedy, Drama",
+      year: 2001,
+      duration: "122",
+      rating: 8.3,
+      tag: "old",
+      poster: "https://m.media-amazon.com/images/M/MV5BNDg4NjM1YjMtYmNhZC00MjM0LWFiZmYtNGY1YjA3MzZmODc5XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg",
+      description: {
+        en: "A whimsical French film about finding joy in small things.",
+        am: "በትንንሽ ነገሮች ውስጥ ደስታን ስለማግኘት የፈረንሳይ ፊልም።",
+        or: "Film Faransaayii waa'ee gammachuu wantoota xixiqqoo keessatti argachuu."
+      }
+    },
+    {
+      id: 17,
+      title: {
+        en: "City of God",
+        am: "የእግዚአብሔር ከተማ",
+        or: "Magaalaa Waaqaa"
+      },
+      genre: "Crime, Drama",
+      year: 2002,
+      duration: "130",
+      rating: 8.6,
+      tag: "old",
+      poster: "https://m.media-amazon.com/images/M/MV5BOTMwYjc5ZmItYTFjZC00ZGQ3LTlkNTMtMjZiNTZlMWQzNzI5XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+      description: {
+        en: "Brazilian masterpiece about life in Rio's favelas.",
+        am: "ስለ ሪዮ ፋቬላስ ሕይወት የብራዚል ድንቅ ፊልም።",
+        or: "Masterpiece Baraazil waa'ee jireenya favelas Rio."
+      }
+    },
+    {
+      id: 18,
+      title: {
+        en: "Oldboy",
+        am: "ኦልድቦይ",
+        or: "Ooldbooyii"
+      },
+      genre: "Thriller, Drama, Mystery",
+      year: 2003,
+      duration: "120",
+      rating: 8.4,
+      tag: "old",
+      poster: "https://m.media-amazon.com/images/M/MV5BMTI3NTQyMzU5M15BMl5BanBnXkFtZTcwMTM2MjgyMQ@@._V1_.jpg",
+      description: {
+        en: "Korean revenge thriller that redefined cinema.",
+        am: "ሲኒማን እንደገና የተወሰነ ኮሪያዊ የበቀል ፊልም።",
+        or: "Film haaloo Koreeyaa kan siinimaa irra deebi'e ibse."
+      }
+    },
+    {
+      id: 19,
+      title: {
+        en: "Roma",
+        am: "ሮማ",
+        or: "Roomaa"
+      },
+      genre: "Drama",
+      year: 2018,
+      duration: "135",
+      rating: 7.7,
+      tag: "new",
+      poster: "https://m.media-amazon.com/images/M/MV5BMTA2Njg2MTI2MTZeQTJeQWpwZ15BdWU4MDkzNDA5NTAz._V1_.jpg",
+      description: {
+        en: "Cuarón's personal tribute to his childhood nanny.",
+        am: "የኩአሮን ለልጅነት እናታቸው ግላዊ ክብር።",
+        or: "Kabaja dhuunfaa Cuarón haadha ijoolummaa isaatiif."
+      }
+    },
+    {
+      id: 20,
+      title: {
+        en: "The Handmaiden",
+        am: "ዘ ሃንድሜይደን",
+        or: "Handimeyidenii"
+      },
+      genre: "Drama, Romance, Thriller",
+      year: 2016,
+      duration: "145",
+      rating: 8.1,
+      tag: "new",
+      poster: "https://m.media-amazon.com/images/M/MV5BYTczMzU0NDY2N15BMl5BanBnXkFtZTgwMTMyNDMzOTE@._V1_.jpg",
+      description: {
+        en: "Park Chan-wook's erotic psychological thriller.",
+        am: "የፓርክ ቻን-ዉክ ኤሮቲክ ሳይኮሎጂካል ስሪላር።",
+        or: "Thriller saayikoolojikaalii erotic Park Chan-wook."
+      }
     }
-    // ... keep existing movies data with enhanced descriptions and ratings
   ];
 
   const filteredMovies = (tag: string) => {
