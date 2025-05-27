@@ -361,6 +361,84 @@ export type Database = {
           },
         ]
       }
+      movie_genres: {
+        Row: {
+          created_at: string | null
+          id: number
+          name: string
+        }
+        Insert: {
+          created_at?: string | null
+          id: number
+          name: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: number
+          name?: string
+        }
+        Relationships: []
+      }
+      movies: {
+        Row: {
+          adult: boolean | null
+          backdrop_path: string | null
+          created_at: string | null
+          genre_ids: number[] | null
+          id: number
+          original_language: string | null
+          original_title: string | null
+          overview: string | null
+          popularity: number | null
+          poster_path: string | null
+          release_date: string | null
+          title: string
+          tmdb_id: number
+          updated_at: string | null
+          video: boolean | null
+          vote_average: number | null
+          vote_count: number | null
+        }
+        Insert: {
+          adult?: boolean | null
+          backdrop_path?: string | null
+          created_at?: string | null
+          genre_ids?: number[] | null
+          id?: number
+          original_language?: string | null
+          original_title?: string | null
+          overview?: string | null
+          popularity?: number | null
+          poster_path?: string | null
+          release_date?: string | null
+          title: string
+          tmdb_id: number
+          updated_at?: string | null
+          video?: boolean | null
+          vote_average?: number | null
+          vote_count?: number | null
+        }
+        Update: {
+          adult?: boolean | null
+          backdrop_path?: string | null
+          created_at?: string | null
+          genre_ids?: number[] | null
+          id?: number
+          original_language?: string | null
+          original_title?: string | null
+          overview?: string | null
+          popularity?: number | null
+          poster_path?: string | null
+          release_date?: string | null
+          title?: string
+          tmdb_id?: number
+          updated_at?: string | null
+          video?: boolean | null
+          vote_average?: number | null
+          vote_count?: number | null
+        }
+        Relationships: []
+      }
       payments: {
         Row: {
           amount: number
@@ -461,6 +539,35 @@ export type Database = {
           updated_at?: string | null
         }
         Relationships: []
+      }
+      user_movie_favorites: {
+        Row: {
+          created_at: string | null
+          id: string
+          movie_id: number | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          movie_id?: number | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          movie_id?: number | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_movie_favorites_movie_id_fkey"
+            columns: ["movie_id"]
+            isOneToOne: false
+            referencedRelation: "movies"
+            referencedColumns: ["id"]
+          },
+        ]
       }
     }
     Views: {
