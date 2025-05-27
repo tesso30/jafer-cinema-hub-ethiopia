@@ -17,8 +17,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
       description: "Browse thousands of movies online, visit our store with your device, and get instant transfers. Plus, get expert help with all your electronic needs.",
       browseMovies: "Browse Movies",
       exploreServices: "Explore Services",
-      watchPreview: "Watch Preview",
-      trustedBy: "Trusted by 10,000+ customers"
+      watchPreview: "Watch Preview"
     },
     am: {
       title: "ፊልሞችን ያግኙ። ይጎብኙ። በፍጥነት ያስተላልፉ።",
@@ -26,8 +25,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
       description: "በሺዎች የሚቆጠሩ ፊልሞችን በመስመር ላይ ይመልከቱ፣ መሳሪያዎን ይዘው መደብራችንን ይጎብኙ፣ እና ፈጣን ስርጭት ያግኙ። በተጨማሪም ለሁሉም የኤሌክትሮኒክስ ፍላጎቶችዎ ባለሙያ እርዳታ ያግኙ።",
       browseMovies: "ፊልሞችን ይመልከቱ",
       exploreServices: "አገልግሎቶችን ይመልከቱ",
-      watchPreview: "ቅድመ እይታ ይመልከቱ",
-      trustedBy: "በ10,000+ ደንበኞች የተመረጠ"
+      watchPreview: "ቅድመ እይታ ይመልከቱ"
     },
     or: {
       title: "Fiilmii Argadhu. Daawwadhu. Hatattamaan Dabarsuu.",
@@ -35,8 +33,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
       description: "Fiilmii kumaatama marsariitii irratti ilaali, meeshaa keetiin duka'ana keenya daawwadhu, fi dabarsuu ariifataa argadhu. Dabalataan barbaachisummaa elektrooniksii hundaaf gargaarsa ogeeyyii argadhu.",
       browseMovies: "Fiilmii Ilaali",
       exploreServices: "Tajaajila Daawwadhu",
-      watchPreview: "Mul'ata Dursaa Ilaali",
-      trustedBy: "Maamiltootaa 10,000+ caalaatiin amanamaa"
+      watchPreview: "Mul'ata Dursaa Ilaali"
     }
   };
 
@@ -60,13 +57,6 @@ export default function HeroSection({ language }: HeroSectionProps) {
       </div>
 
       <div className="container mx-auto px-4 z-10 text-center max-w-5xl">
-        {/* Trust indicator */}
-        <div className="mb-6 animate-fade-in">
-          <span className="inline-flex items-center px-4 py-2 bg-jafer-gold/20 rounded-full text-sm font-medium text-jafer-gold border border-jafer-gold/30">
-            ⭐ {translations[language].trustedBy}
-          </span>
-        </div>
-
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in bg-gradient-to-r from-white via-jafer-gold to-white bg-clip-text text-transparent">
           {translations[language].title}
         </h1>
