@@ -1,4 +1,3 @@
-
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 
@@ -27,12 +26,12 @@ export interface Movie {
   tagline?: string;
   homepage?: string;
   imdb_id?: string;
-  production_companies?: any[];
-  videos?: any[];
+  production_companies?: any;
+  videos?: any;
   credits?: any;
-  similar_movies?: any[];
-  recommendations?: any[];
-  keywords?: any[];
+  similar_movies?: any;
+  recommendations?: any;
+  keywords?: any;
 }
 
 interface MovieFilters {

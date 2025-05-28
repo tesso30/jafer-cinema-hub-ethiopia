@@ -13,32 +13,47 @@ const translations = {
   en: {
     address: "123 Cinema Street, Addis Ababa, Ethiopia",
     phone: "+251912340888",
-    email: "jafer@gmail.com",
+    alternatePhone: "+251934340162",
+    email: "jafer25dish@gmail.com",
     hours: "Mon-Sun: 8:00 AM - 10:00 PM",
     callNow: "Call Now",
     emailUs: "Email Us",
     directions: "Get Directions",
     businessHours: "Business Hours",
+    phoneLabel: "Phone",
+    emailLabel: "Email",
+    addressLabel: "Address",
+    or: "or"
   },
   am: {
     address: "123 የሲኒማ መንገድ፣ አዲስ አበባ፣ ኢትዮጵያ",
     phone: "+251912340888",
-    email: "jafer@gmail.com",
+    alternatePhone: "+251934340162",
+    email: "jafer25dish@gmail.com",
     hours: "ሰኞ-እሁድ: 8:00 ጥዋት - 10:00 ማታ",
     callNow: "አሁን ይደውሉ",
     emailUs: "ኢሜይል ይላኩ",
     directions: "አቅጣጫ ያግኙ",
     businessHours: "የስራ ሰዓታት",
+    phoneLabel: "ስልክ",
+    emailLabel: "ኢሜይል",
+    addressLabel: "አድራሻ",
+    or: "ወይም"
   },
   or: {
     address: "123 Daandii Ciinimaa, Finfinnee, Itoophiyaa",
     phone: "+251912340888",
-    email: "jafer@gmail.com",
+    alternatePhone: "+251934340162",
+    email: "jafer25dish@gmail.com",
     hours: "Wiixata-Dilbata: 8:00 ganama - 10:00 galgala",
     callNow: "Amma Bilbili",
     emailUs: "Imeelii Nuuf Ergi",
     directions: "Kallattii Argadhu",
     businessHours: "Sa'aatii Daldalaa",
+    phoneLabel: "Bilbila",
+    emailLabel: "Imeelii",
+    addressLabel: "Teessoo",
+    or: "ykn"
   }
 };
 
@@ -62,7 +77,7 @@ export default function ContactInfo({ language }: ContactInfoProps) {
               <MapPin className="w-6 h-6 text-jafer-gold" />
             </div>
             <div className="flex-1">
-              <h3 className="font-semibold text-white mb-1">Address</h3>
+              <h3 className="font-semibold text-white mb-1">{translations[language].addressLabel}</h3>
               <p className="text-gray-400 leading-relaxed">{translations[language].address}</p>
               <Button 
                 variant="link" 
@@ -82,8 +97,9 @@ export default function ContactInfo({ language }: ContactInfoProps) {
               <Phone className="w-6 h-6 text-jafer-gold" />
             </div>
             <div className="flex-1">
-              <h3 className="font-semibold text-white mb-1">Phone</h3>
+              <h3 className="font-semibold text-white mb-1">{translations[language].phoneLabel}</h3>
               <p className="text-gray-400">{translations[language].phone}</p>
+              <p className="text-gray-400">{translations[language].or} {translations[language].alternatePhone}</p>
               <Button 
                 variant="link" 
                 className="text-jafer-gold hover:text-jafer-darkgold p-0 h-auto mt-2"
@@ -102,7 +118,7 @@ export default function ContactInfo({ language }: ContactInfoProps) {
               <Mail className="w-6 h-6 text-jafer-gold" />
             </div>
             <div className="flex-1">
-              <h3 className="font-semibold text-white mb-1">Email</h3>
+              <h3 className="font-semibold text-white mb-1">{translations[language].emailLabel}</h3>
               <p className="text-gray-400">{translations[language].email}</p>
               <Button 
                 variant="link" 

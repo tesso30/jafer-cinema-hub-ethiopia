@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { cn } from "@/lib/utils";
 import { Tv, Smartphone, Wrench, Star, Clock, Users, CheckCircle, Satellite } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 type Language = 'en' | 'am' | 'or';
 
@@ -12,6 +13,7 @@ interface ServicesSectionProps {
 
 export default function ServicesSection({ language }: ServicesSectionProps) {
   const [selectedService, setSelectedService] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   const translations = {
     en: {
@@ -142,24 +144,28 @@ export default function ServicesSection({ language }: ServicesSectionProps) {
   const services = [
     {
       key: 'tvService',
+      id: 'tv',
       icon: Tv,
       color: 'text-blue-400',
       bgColor: 'bg-blue-400/20'
     },
     {
       key: 'dishService',
+      id: 'dish',
       icon: Satellite,
       color: 'text-cyan-400',
       bgColor: 'bg-cyan-400/20'
     },
     {
       key: 'jepasService',
+      id: 'jepas',
       icon: Wrench,
       color: 'text-green-400',
       bgColor: 'bg-green-400/20'
     },
     {
       key: 'mobileService',
+      id: 'mobile',
       icon: Smartphone,
       color: 'text-purple-400',
       bgColor: 'bg-purple-400/20'
@@ -229,12 +235,20 @@ export default function ServicesSection({ language }: ServicesSectionProps) {
               size="sm" 
               variant="outline" 
               className="flex-1 border-jafer-gold text-jafer-gold hover:bg-jafer-gold hover:text-black transition-all duration-300"
+              onClick={(e) => {
+                e.stopPropagation();
+                navigate(`/service/${service.id}`);
+              }}
             >
               {translations[language].viewDetails}
             </Button>
             <Button 
               size="sm" 
               className="flex-1 bg-jafer-gold text-black hover:bg-jafer-darkgold transition-all duration-300"
+              onClick={(e) => {
+                e.stopPropagation();
+                navigate(`/book/${service.id}`);
+              }}
             >
               {translations[language].bookService}
             </Button>

@@ -19,6 +19,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
   
   const translations = {
     en: {
+      brandName: "Jafe Movie & Electronics",
       home: 'Home',
       movies: 'Movies',
       services: 'Services',
@@ -26,6 +27,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
       contact: 'Contact'
     },
     am: {
+      brandName: "ጃፌ ፊልም እና ኤሌክትሮኒክስ",
       home: 'መነሻ',
       movies: 'ፊልሞች',
       services: 'አገልግሎቶች',
@@ -33,6 +35,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
       contact: 'ያግኙን'
     },
     or: {
+      brandName: "Jafe Fiilmii fi Elektrooniksii",
       home: 'Mana',
       movies: 'Fiilmii',
       services: 'Tajaajila',
@@ -78,8 +81,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
           <a href="#" className="font-montserrat font-extrabold text-xl md:text-2xl">
-            <span className="text-white">Jafer's</span>
-            <span className="text-jafer-gold"> M&E</span>
+            <span className="text-jafer-gold">{translations[language].brandName}</span>
           </a>
         </div>
 
