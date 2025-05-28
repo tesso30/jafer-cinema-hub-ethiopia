@@ -428,57 +428,96 @@ export type Database = {
         Row: {
           adult: boolean | null
           backdrop_path: string | null
+          budget: number | null
           created_at: string | null
+          credits: Json | null
           genre_ids: number[] | null
+          homepage: string | null
           id: number
+          imdb_id: string | null
+          keywords: Json | null
           original_language: string | null
           original_title: string | null
           overview: string | null
           popularity: number | null
           poster_path: string | null
+          production_companies: Json | null
+          recommendations: Json | null
           release_date: string | null
+          revenue: number | null
+          runtime: number | null
+          similar_movies: Json | null
+          status: string | null
+          tagline: string | null
           title: string
           tmdb_id: number
           updated_at: string | null
           video: boolean | null
+          videos: Json | null
           vote_average: number | null
           vote_count: number | null
         }
         Insert: {
           adult?: boolean | null
           backdrop_path?: string | null
+          budget?: number | null
           created_at?: string | null
+          credits?: Json | null
           genre_ids?: number[] | null
+          homepage?: string | null
           id?: number
+          imdb_id?: string | null
+          keywords?: Json | null
           original_language?: string | null
           original_title?: string | null
           overview?: string | null
           popularity?: number | null
           poster_path?: string | null
+          production_companies?: Json | null
+          recommendations?: Json | null
           release_date?: string | null
+          revenue?: number | null
+          runtime?: number | null
+          similar_movies?: Json | null
+          status?: string | null
+          tagline?: string | null
           title: string
           tmdb_id: number
           updated_at?: string | null
           video?: boolean | null
+          videos?: Json | null
           vote_average?: number | null
           vote_count?: number | null
         }
         Update: {
           adult?: boolean | null
           backdrop_path?: string | null
+          budget?: number | null
           created_at?: string | null
+          credits?: Json | null
           genre_ids?: number[] | null
+          homepage?: string | null
           id?: number
+          imdb_id?: string | null
+          keywords?: Json | null
           original_language?: string | null
           original_title?: string | null
           overview?: string | null
           popularity?: number | null
           poster_path?: string | null
+          production_companies?: Json | null
+          recommendations?: Json | null
           release_date?: string | null
+          revenue?: number | null
+          runtime?: number | null
+          similar_movies?: Json | null
+          status?: string | null
+          tagline?: string | null
           title?: string
           tmdb_id?: number
           updated_at?: string | null
           video?: boolean | null
+          videos?: Json | null
           vote_average?: number | null
           vote_count?: number | null
         }

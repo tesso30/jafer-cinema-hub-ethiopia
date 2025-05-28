@@ -1,3 +1,4 @@
+
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 
@@ -123,7 +124,7 @@ serve(async (req) => {
       })),
       videos: movie.videos?.results,
       credits: movie.credits,
-      similar: movie.similar?.results,
+      similar_movies: movie.similar?.results,
       recommendations: movie.recommendations?.results,
       keywords: movie.keywords?.keywords
     }));

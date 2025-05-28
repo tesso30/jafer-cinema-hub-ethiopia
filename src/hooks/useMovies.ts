@@ -1,3 +1,4 @@
+
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 
@@ -29,7 +30,7 @@ export interface Movie {
   production_companies?: any[];
   videos?: any[];
   credits?: any;
-  similar?: any[];
+  similar_movies?: any[];
   recommendations?: any[];
   keywords?: any[];
 }
