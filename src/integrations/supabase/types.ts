@@ -68,6 +68,51 @@ export type Database = {
           },
         ]
       }
+      consultation_requests: {
+        Row: {
+          branch: string | null
+          created_at: string
+          email: string
+          experience: string | null
+          id: string
+          message: string | null
+          name: string
+          phone: string
+          preferred_date: string | null
+          preferred_time: string | null
+          status: string | null
+          updated_at: string
+        }
+        Insert: {
+          branch?: string | null
+          created_at?: string
+          email: string
+          experience?: string | null
+          id?: string
+          message?: string | null
+          name: string
+          phone: string
+          preferred_date?: string | null
+          preferred_time?: string | null
+          status?: string | null
+          updated_at?: string
+        }
+        Update: {
+          branch?: string | null
+          created_at?: string
+          email?: string
+          experience?: string | null
+          id?: string
+          message?: string | null
+          name?: string
+          phone?: string
+          preferred_date?: string | null
+          preferred_time?: string | null
+          status?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       contact_messages: {
         Row: {
           branch: string | null

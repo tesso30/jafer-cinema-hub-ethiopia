@@ -1,6 +1,7 @@
+
 import React, { useState } from 'react';
 import { cn } from "@/lib/utils";
-import { Tv, Gamepad, Speaker, Computer, Star, Clock, Users, CheckCircle, Satellite } from "lucide-react";
+import { Tv, Smartphone, Wrench, Star, Clock, Users, CheckCircle, Satellite } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 type Language = 'en' | 'am' | 'or';
@@ -20,36 +21,25 @@ export default function ServicesSection({ language }: ServicesSectionProps) {
         title: "TV Setup & Repair",
         description: "Complete installation, configuration, and repair services for all TV brands, satellite systems, and smart TV setup.",
         features: ["Free diagnosis", "Same-day service", "1-year warranty", "All brands supported"],
-        price: "Starting from 200 ETB",
         duration: "30-90 minutes"
       },
       dishService: {
         title: "DISH Installation",
         description: "Professional DISH satellite installation and setup with optimal signal positioning, receiver configuration, and channel programming.",
         features: ["Signal optimization", "Multi-room setup", "HD/4K programming", "Professional mounting"],
-        price: "Starting from 500 ETB",
         duration: "120-240 minutes"
       },
-      gameService: {
-        title: "Gaming Console Support",
-        description: "Expert setup, troubleshooting, repair, and optimization for PlayStation, Xbox, Nintendo, and PC gaming systems.",
-        features: ["Performance optimization", "Software updates", "Hardware repairs", "Gaming setup"],
-        price: "Starting from 150 ETB",
-        duration: "45-120 minutes"
-      },
-      speakerService: {
-        title: "Audio System Setup",
-        description: "Professional home theater installation, sound system configuration, audio equipment repair, and acoustic optimization.",
-        features: ["Surround sound setup", "Acoustic calibration", "Wireless configuration", "Premium installation"],
-        price: "Starting from 300 ETB",
+      jepasService: {
+        title: "Jepas Repair",
+        description: "Professional repair services for Jepas devices with expert troubleshooting, component replacement, and performance optimization.",
+        features: ["Expert diagnosis", "Genuine parts", "Performance optimization", "Quality guarantee"],
         duration: "60-180 minutes"
       },
-      computerService: {
-        title: "Computer & Device Support",
-        description: "Comprehensive hardware and software solutions for computers, laptops, smartphones, and tablets with data protection.",
-        features: ["Data recovery", "Virus removal", "Hardware upgrades", "System optimization"],
-        price: "Starting from 100 ETB",
-        duration: "30-240 minutes"
+      mobileService: {
+        title: "Mobile Repair",
+        description: "Comprehensive smartphone and tablet repair services including screen replacement, battery issues, software problems, and hardware fixes.",
+        features: ["Screen replacement", "Battery repair", "Software fixes", "Water damage recovery"],
+        duration: "30-120 minutes"
       },
       features: {
         certified: "Certified Technicians",
@@ -72,36 +62,25 @@ export default function ServicesSection({ language }: ServicesSectionProps) {
         title: "የቴሌቪዥን ማዋቀር እና ጥገና",
         description: "ለሁሉም የቴሌቪዥን ብራንዶች፣ የሳተላይት ስርዓቶች እና የስማርት ቲቪ ማዋቀር ሙሉ ማስገጃ፣ ውቅር እና የጥገና አገልግሎቶች።",
         features: ["ነፃ ምርመራ", "የቀን አገልግሎት", "1 ዓመት ዋስትና", "ሁሉም ብራንዶች ይደገፋሉ"],
-        price: "ከ200 ብር ጀምሮ",
         duration: "30-90 ደቂቃዎች"
       },
       dishService: {
         title: "DISH ማስገጃ",
         description: "ሙያዊ DISH ሳተላይት ማስገጃ እና ማዋቀር ከምርጥ ሲግናል አቀማመጥ፣ ተቀባይ ውቅር እና የቻናል ፕሮግራሚንግ ጋር።",
         features: ["የሲግናል ማመቻቸት", "የበርካታ ክፍል ማዋቀር", "HD/4K ፕሮግራሚንግ", "ሙያዊ ማስገጫ"],
-        price: "ከ500 ብር ጀምሮ",
         duration: "120-240 ደቂቃዎች"
       },
-      gameService: {
-        title: "የጨዋታ ኮንሶል ድጋፍ",
-        description: "ለፕሌይስቴሽን፣ ኤክስቦክስ፣ ኒንቴንዶ እና ፒሲ የጨዋታ ስርዓቶች ባለሙያ ውቅር፣ ችግር መፍታት፣ ጥገና እና ማመቻቸት።",
-        features: ["የአፈጻጸም ማሻሻያ", "የሶፍትዌር ዝማኔዎች", "የሃርድዌር ጥገናዎች", "የጨዋታ ማዋቀር"],
-        price: "ከ150 ብር ጀምሮ",
-        duration: "45-120 ደቂቃዎች"
-      },
-      speakerService: {
-        title: "የድምጽ ስርዓት ማዋቀር",
-        description: "ሙያዊ የቤት ውስጥ ትያትር ማስገጃ፣ የድምጽ ስርዓት ውቅር፣ የድምጽ መሳሪያዎች ጥገና እና የአኮስቲክ ማመቻቸት።",
-        features: ["የሰርራውንድ ድምጽ ማዋቀር", "አኮስቲክ ማስተካከያ", "ወይረለስ ውቅር", "የፕሪሚየም ማስገጃ"],
-        price: "ከ300 ብር ጀምሮ",
+      jepasService: {
+        title: "የጀፓስ ጥገና",
+        description: "ለጀፓስ መሳሪያዎች ሙያዊ የጥገና አገልግሎቶች ከባለሙያ ችግር መፍታት፣ አካል መተካት እና የአፈጻጸም ማመቻቸት ጋር።",
+        features: ["የባለሙያ ምርመራ", "ዋናውና ክፍሎች", "የአፈጻጸም ማመቻቸት", "የጥራት ዋስትና"],
         duration: "60-180 ደቂቃዎች"
       },
-      computerService: {
-        title: "ኮምፒውተር እና መሳሪያ ድጋፍ",
-        description: "ለኮምፒውተሮች፣ ላፕቶportoች፣ ስማርትፎኖች እና ታብሌቶች ባለሙያ የሃርድዌር እና ሶፍትዌር መፍትሄዎች ከውሂብ ጥበቃ ጋር።",
-        features: ["የውሂብ ማግኛ", "ቫይረስ ማስወገድ", "የሃርድዌር ማሻሻያዎች", "የስርዓት ማመቻቸት"],
-        price: "ከ100 ብር ጀምሮ",
-        duration: "30-240 ደቂቃዎች"
+      mobileService: {
+        title: "የሞባይል ጥገና",
+        description: "ሙሉ የስማርትፎን እና ታብሌት የጥገና አገልግሎቶች የስክሪን መተካት፣ የባትሪ ችግሮች፣ የሶፍትዌር ችግሮች እና የሃርድዌር ጥገናዎችን ጨምሮ።",
+        features: ["የስክሪን መተካት", "የባትሪ ጥገና", "የሶፍትዌር ጥገናዎች", "የውሃ ጉዳት ማገገሚያ"],
+        duration: "30-120 ደቂቃዎች"
       },
       features: {
         certified: "የተመሰከረላቸው ቴክኒሺያኖች",
@@ -124,36 +103,25 @@ export default function ServicesSection({ language }: ServicesSectionProps) {
         title: "Qophii fi Suphaa TV",
         description: "Tajaajila dhaabbii, qindaa'ina fi suphaa guutuu braandii TV hunda, sirna saatalaayitii fi qophii TV ismaartiif.",
         features: ["Qorannoo bilisaa", "Tajaajila guyyaa", "Waadaa waggaa tokkoo", "Braandii hundi ni deeggarnama"],
-        price: "Qarshii 200 irraa kaasee",
         duration: "Daqiiqaa 30-90"
       },
       dishService: {
         title: "Dhaabbii DISH",
         description: "Dhaabbii fi qophii saatalaayitii DISH ogummaa mallattoo gaarii ta'e, qindaa'ina fudhattuu fi sagantaa chaanaalii waliin.",
         features: ["Fooyya'iinsa mallattoo", "Qophii kutaa hedduudhaa", "Sagantaa HD/4K", "Dhaabbii ogummaa"],
-        price: "Qarshii 500 irraa kaasee",
         duration: "Daqiiqaa 120-240"
       },
-      gameService: {
-        title: "Deeggarsa Konsolii Geemii",
-        description: "Qophii ogeessaa, qorannoo rakkoo, suphaa fi haala gaariin hojjechuuf PlayStation, Xbox, Nintendo fi sirna geemii PC.",
-        features: ["Fooyya'iinsa raawwii", "Fooyya'iinsa sooftweeerii", "Suphaa haardiweeraa", "Qophii geemii"],
-        price: "Qarshii 150 irraa kaasee",
-        duration: "Daqiiqaa 45-120"
-      },
-      speakerService: {
-        title: "Qophii Sirna Sagalee",
-        description: "Dhaabbii filmiiwwan manaa ogummaa, qindaa'ina sirna sagalee, suphaa meeshaalee sagalee fi fooyya'iinsa akustik.",
-        features: ["Qophii sagalee naannoo", "Sirreessa akustik", "Qindaa'ina wayarles", "Dhaabbii olaanaa"],
-        price: "Qarshii 300 irraa kaasee",
+      jepasService: {
+        title: "Suphaa Jepas",
+        description: "Tajaajila suphaa ogummaa meeshaalee Jepas tiif qorannoo rakkoo ogeessaa, bakka bu'iinsa kutaa fi fooyya'iinsa raawwii waliin.",
+        features: ["Qorannoo ogeessaa", "Kutaalee dhugaa", "Fooyya'iinsa raawwii", "Waadaa qulqullina"],
         duration: "Daqiiqaa 60-180"
       },
-      computerService: {
-        title: "Deeggarsa Kompiitaraa fi Meeshaa",
-        description: "Furmaata haardiweeraa fi sooftweeraa bal'aa kompiitarootaa, laaptoopii, bilbila sammuu fi taabletootaaf eegumsa daataa waliin.",
-        features: ["Deebisuu daataa", "Haxxuu vayirasii", "Fooyya'iinsa haardiweeraa", "Fooyya'iinsa sirna"],
-        price: "Qarshii 100 irraa kaasee",
-        duration: "Daqiiqaa 30-240"
+      mobileService: {
+        title: "Suphaa Bilbilaa",
+        description: "Tajaajila suphaa smartphone fi tablet bal'aa bakka bu'iinsa iskiriinii, dhimma baatirii, rakkoo sooftweeraa fi suphaa haardiweeraa dabalatee.",
+        features: ["Bakka bu'iinsa iskiriinii", "Suphaa baatirii", "Suphaa sooftweeraa", "Deebisuu miidhaa bishaanii"],
+        duration: "Daqiiqaa 30-120"
       },
       features: {
         certified: "Teknisheenota Ragaa Qaban",
@@ -185,22 +153,16 @@ export default function ServicesSection({ language }: ServicesSectionProps) {
       bgColor: 'bg-cyan-400/20'
     },
     {
-      key: 'gameService',
-      icon: Gamepad,
+      key: 'jepasService',
+      icon: Wrench,
       color: 'text-green-400',
       bgColor: 'bg-green-400/20'
     },
     {
-      key: 'speakerService',
-      icon: Speaker,
+      key: 'mobileService',
+      icon: Smartphone,
       color: 'text-purple-400',
       bgColor: 'bg-purple-400/20'
-    },
-    {
-      key: 'computerService',
-      icon: Computer,
-      color: 'text-orange-400',
-      bgColor: 'bg-orange-400/20'
     }
   ];
 
@@ -259,10 +221,6 @@ export default function ServicesSection({ language }: ServicesSectionProps) {
                 Duration:
               </span>
               <span className="text-jafer-gold font-medium">{serviceData.duration}</span>
-            </div>
-            <div className="flex items-center justify-between text-sm">
-              <span className="text-gray-400">Price:</span>
-              <span className="text-jafer-gold font-bold">{serviceData.price}</span>
             </div>
           </div>
 
@@ -323,7 +281,7 @@ export default function ServicesSection({ language }: ServicesSectionProps) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
         {services.map((service) => (
           <ServiceCard
             key={service.key}
