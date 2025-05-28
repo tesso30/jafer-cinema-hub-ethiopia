@@ -314,6 +314,7 @@ export default function ServicesSection({ language }: ServicesSectionProps) {
         <Button 
           size="lg"
           className="bg-jafer-gold text-black hover:bg-jafer-darkgold font-bold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
+          onClick={() => navigate('/quote')}
         >
           {translations[language].getQuote}
         </Button>

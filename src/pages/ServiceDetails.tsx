@@ -18,6 +18,7 @@ const ServiceDetails = () => {
       backToServices: "Back to Services",
       bookService: "Book This Service",
       callNow: "Call Now",
+      getQuote: "Get Free Quote",
       features: "What's Included",
       duration: "Service Duration",
       pricing: "Pricing",
@@ -29,6 +30,7 @@ const ServiceDetails = () => {
       backToServices: "ወደ አገልግሎቶች ተመለስ",
       bookService: "ይህን አገልግሎት ይመዝግቡ",
       callNow: "አሁን ይደውሉ",
+      getQuote: "ነፃ ግምት ያግኙ",
       features: "የተከተተ",
       duration: "የአገልግሎት ጊዜ",
       pricing: "ዋጋ",
@@ -40,6 +42,7 @@ const ServiceDetails = () => {
       backToServices: "Gara Tajaajilatti Deebi'i",
       bookService: "Tajaajila Kana Galmeessi",
       callNow: "Amma Bilbili",
+      getQuote: "Tilmaama Bilisaa Argadhu",
       features: "Waan Dabalatame",
       duration: "Yeroo Tajaajilaa",
       pricing: "Gatii",
@@ -209,7 +212,7 @@ const ServiceDetails = () => {
               <div className="space-y-4">
                 <Button 
                   className="w-full bg-jafer-gold text-black hover:bg-jafer-darkgold font-bold py-3"
-                  onClick={() => window.open(`tel:${translations[language].phone}`, '_self')}
+                  onClick={() => navigate('/call')}
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   {translations[language].callNow}
@@ -218,17 +221,17 @@ const ServiceDetails = () => {
                 <Button 
                   variant="outline"
                   className="w-full border-jafer-gold text-jafer-gold hover:bg-jafer-gold hover:text-black"
-                  onClick={() => {
-                    const element = document.getElementById('contact');
-                    if (element) {
-                      navigate('/', { replace: true });
-                      setTimeout(() => {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                      }, 100);
-                    }
-                  }}
+                  onClick={() => navigate('/quote')}
                 >
-                  {translations[language].contactUs}
+                  {translations[language].getQuote}
+                </Button>
+
+                <Button 
+                  variant="outline"
+                  className="w-full border-gray-600 text-gray-400 hover:bg-gray-700 hover:text-white"
+                  onClick={() => navigate(`/book/${serviceId}`)}
+                >
+                  {translations[language].bookService}
                 </Button>
               </div>
             </div>
