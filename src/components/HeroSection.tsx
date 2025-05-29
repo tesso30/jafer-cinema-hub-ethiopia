@@ -45,7 +45,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
   };
 
   return (
-    <section id="home" className="min-h-screen bg-hero-pattern bg-cover bg-center flex flex-col justify-center items-center text-white relative overflow-hidden">
+    <section id="home" className="min-h-screen bg-hero-pattern bg-cover bg-center flex flex-col justify-center items-center text-white relative overflow-hidden pt-20 md:pt-0">
       {/* Enhanced gradient overlays */}
       <div className="absolute inset-0 bg-gradient-to-br from-jafer-dark via-jafer-dark/90 to-transparent"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-jafer-dark via-transparent to-jafer-dark/30"></div>
@@ -57,32 +57,32 @@ export default function HeroSection({ language }: HeroSectionProps) {
       </div>
 
       <div className="container mx-auto px-4 z-10 text-center max-w-5xl">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in bg-gradient-to-r from-white via-jafer-gold to-white bg-clip-text text-transparent">
+        <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight animate-fade-in bg-gradient-to-r from-white via-jafer-gold to-white bg-clip-text text-transparent">
           {translations[language].title}
         </h1>
         
-        <p className="text-xl md:text-2xl text-gray-300 mb-4 animate-fade-in font-medium" style={{ animationDelay: '0.2s' }}>
+        <p className="text-lg md:text-2xl text-gray-300 mb-3 md:mb-4 animate-fade-in font-medium px-2" style={{ animationDelay: '0.2s' }}>
           {translations[language].subtitle}
         </p>
         
-        <p className="text-lg text-gray-400 mb-10 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.3s' }}>
+        <p className="text-base md:text-lg text-gray-400 mb-8 md:mb-10 max-w-3xl mx-auto animate-fade-in px-2" style={{ animationDelay: '0.3s' }}>
           {translations[language].description}
         </p>
         
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+        <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 mb-6 md:mb-8 animate-fade-in px-4" style={{ animationDelay: '0.4s' }}>
           <Button 
             onClick={() => scrollToSection('movies')}
-            className="bg-jafer-gold hover:bg-jafer-darkgold text-black font-bold py-6 px-8 rounded-full text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-jafer-gold/20"
+            className="bg-jafer-gold hover:bg-jafer-darkgold text-black font-bold py-4 md:py-6 px-6 md:px-8 rounded-full text-base md:text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-jafer-gold/20"
             size="lg"
             aria-label={`${translations[language].browseMovies} - Navigate to movies section`}
           >
-            <Download className="mr-2 h-5 w-5" />
+            <Download className="mr-2 h-4 w-4 md:h-5 md:w-5" />
             {translations[language].browseMovies}
           </Button>
           
           <Button 
             onClick={() => scrollToSection('services')}
-            className="bg-jafer-red hover:bg-jafer-red/80 text-white font-bold py-6 px-8 rounded-full text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-jafer-red/20"
+            className="bg-jafer-red hover:bg-jafer-red/80 text-white font-bold py-4 md:py-6 px-6 md:px-8 rounded-full text-base md:text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-jafer-red/20"
             variant="secondary"
             size="lg"
             aria-label={`${translations[language].exploreServices} - Navigate to services section`}
@@ -92,18 +92,18 @@ export default function HeroSection({ language }: HeroSectionProps) {
           
           <Button 
             onClick={() => scrollToSection('movies')}
-            className="bg-transparent border-2 border-white/30 hover:border-white/60 text-white font-bold py-6 px-8 rounded-full text-lg transition-all duration-300 hover:bg-white/10 backdrop-blur-sm"
+            className="bg-transparent border-2 border-white/30 hover:border-white/60 text-white font-bold py-4 md:py-6 px-6 md:px-8 rounded-full text-base md:text-lg transition-all duration-300 hover:bg-white/10 backdrop-blur-sm"
             variant="outline"
             size="lg"
             aria-label={`${translations[language].watchPreview} - View movie previews`}
           >
-            <Play className="mr-2 h-5 w-5" />
+            <Play className="mr-2 h-4 w-4 md:h-5 md:w-5" />
             {translations[language].watchPreview}
           </Button>
         </div>
 
         {/* Scroll indicator */}
-        <div className="animate-bounce mt-8" style={{ animationDelay: '0.6s' }}>
+        <div className="animate-bounce mt-4 md:mt-8" style={{ animationDelay: '0.6s' }}>
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
           </div>
