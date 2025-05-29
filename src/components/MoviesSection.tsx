@@ -44,7 +44,6 @@ export default function MoviesSection({ language }: MoviesSectionProps) {
       refreshMovies: "Refresh Movies",
       fetchingMovies: "Fetching new movies..."
     },
-    // ... keep existing code (am and or translations)
     am: {
       title: "የፊልም ቤተ-መጽሃፍታችንን ያስሱ",
       subtitle: "ሺዎች የሚቆጠሩ ፊልሞችን ያግኙ። የሚወዷቸውን ያግኙ እና መደብራችንን በሚጎበኙበት ጊዜ ይጠይቋቸው።",
@@ -147,8 +146,8 @@ export default function MoviesSection({ language }: MoviesSectionProps) {
     if (viewMode === 'list') {
       return (
         <div className="bg-black/40 rounded-xl overflow-hidden border border-gray-800 hover:border-jafer-gold/50 transition-all duration-300 hover:shadow-lg hover:shadow-jafer-gold/10 group">
-          <div className="flex">
-            <div className="relative w-32 h-48 flex-shrink-0">
+          <div className="flex flex-col sm:flex-row">
+            <div className="relative w-full sm:w-32 h-48 flex-shrink-0">
               <img 
                 src={posterUrl}
                 alt={movie.title} 
@@ -161,8 +160,8 @@ export default function MoviesSection({ language }: MoviesSectionProps) {
                 </span>
               </div>
             </div>
-            <div className="flex-1 p-4">
-              <h3 className="text-xl font-bold mb-2 text-white group-hover:text-jafer-gold transition-colors">
+            <div className="flex-1 p-3 sm:p-4">
+              <h3 className="text-lg sm:text-xl font-bold mb-2 text-white group-hover:text-jafer-gold transition-colors">
                 {movie.title}
               </h3>
               <p className="text-sm text-gray-400 mb-2 line-clamp-3">{movie.overview}</p>
@@ -202,11 +201,11 @@ export default function MoviesSection({ language }: MoviesSectionProps) {
             <span className="text-xs text-white font-medium">{movie.vote_average?.toFixed(1) || 'N/A'}</span>
           </div>
         </div>
-        <div className="p-4">
-          <h3 className="text-lg font-bold mb-1 text-white group-hover:text-jafer-gold transition-colors line-clamp-2">
+        <div className="p-3 sm:p-4">
+          <h3 className="text-sm sm:text-lg font-bold mb-1 text-white group-hover:text-jafer-gold transition-colors line-clamp-2">
             {movie.title}
           </h3>
-          <p className="text-sm text-gray-400 mb-2 line-clamp-2">{movie.overview}</p>
+          <p className="text-xs sm:text-sm text-gray-400 mb-2 line-clamp-2">{movie.overview}</p>
           <div className="flex items-center justify-between text-xs text-gray-500">
             <span>{movie.original_language?.toUpperCase()}</span>
             <span>{releaseYear}</span>
@@ -217,32 +216,32 @@ export default function MoviesSection({ language }: MoviesSectionProps) {
   };
 
   return (
-    <section id="movies" className="section-container bg-jafer-darker">
-      <h2 className="section-title gradient-text">{translations[language].title}</h2>
-      <p className="section-subtitle">{translations[language].subtitle}</p>
+    <section id="movies" className="section-container bg-jafer-darker px-4 sm:px-6">
+      <h2 className="section-title gradient-text text-2xl sm:text-3xl lg:text-4xl">{translations[language].title}</h2>
+      <p className="section-subtitle text-sm sm:text-base lg:text-lg">{translations[language].subtitle}</p>
       
       {/* Enhanced search and filters */}
-      <div className="max-w-4xl mx-auto mb-8 space-y-4">
+      <div className="max-w-4xl mx-auto mb-6 sm:mb-8 space-y-3 sm:space-y-4">
         <div className="relative">
-          <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
+          <Search className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4 sm:h-5 sm:w-5" />
           <Input
             type="search"
             placeholder={translations[language].search}
-            className="pl-12 pr-4 py-3 bg-black/40 border-gray-700 focus:border-jafer-gold text-lg rounded-xl"
+            className="pl-10 sm:pl-12 pr-4 py-2 sm:py-3 bg-black/40 border-gray-700 focus:border-jafer-gold text-sm sm:text-lg rounded-xl"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             aria-label={translations[language].search}
           />
         </div>
         
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
-              <Filter className="w-4 h-4 text-gray-400" />
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
+            <div className="flex items-center gap-2 w-full sm:w-auto">
+              <Filter className="w-4 h-4 text-gray-400 flex-shrink-0" />
               <select 
                 value={sortBy} 
                 onChange={(e) => setSortBy(e.target.value as 'title' | 'year' | 'rating')}
-                className="bg-black/40 border border-gray-700 rounded-lg px-3 py-2 text-sm focus:border-jafer-gold focus:outline-none"
+                className="bg-black/40 border border-gray-700 rounded-lg px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm focus:border-jafer-gold focus:outline-none w-full sm:w-auto"
                 aria-label={translations[language].sortBy}
               >
                 <option value="title">{translations[language].sortBy}: Title</option>
@@ -254,49 +253,52 @@ export default function MoviesSection({ language }: MoviesSectionProps) {
             <Button
               onClick={handleRefreshMovies}
               disabled={fetchMoviesMutation.isPending}
-              className="bg-jafer-gold hover:bg-jafer-darkgold text-black"
+              className="bg-jafer-gold hover:bg-jafer-darkgold text-black text-xs sm:text-sm w-full sm:w-auto"
               size="sm"
             >
-              <RefreshCw className={`w-4 h-4 mr-2 ${fetchMoviesMutation.isPending ? 'animate-spin' : ''}`} />
-              {fetchMoviesMutation.isPending ? translations[language].fetchingMovies : translations[language].refreshMovies}
+              <RefreshCw className={`w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 ${fetchMoviesMutation.isPending ? 'animate-spin' : ''}`} />
+              <span className="hidden sm:inline">
+                {fetchMoviesMutation.isPending ? translations[language].fetchingMovies : translations[language].refreshMovies}
+              </span>
+              <span className="sm:hidden">Refresh</span>
             </Button>
           </div>
           
-          <div className="flex items-center gap-2 bg-black/40 rounded-lg p-1 border border-gray-700">
+          <div className="flex items-center gap-1 bg-black/40 rounded-lg p-1 border border-gray-700 w-full sm:w-auto justify-center sm:justify-start">
             <Button
               variant={viewMode === 'grid' ? 'default' : 'ghost'}
               size="sm"
               onClick={() => setViewMode('grid')}
-              className={viewMode === 'grid' ? 'bg-jafer-gold text-black' : 'text-gray-400 hover:text-white'}
+              className={`text-xs sm:text-sm ${viewMode === 'grid' ? 'bg-jafer-gold text-black' : 'text-gray-400 hover:text-white'}`}
               aria-label={translations[language].gridView}
             >
-              <Grid className="w-4 h-4" />
+              <Grid className="w-3 h-3 sm:w-4 sm:h-4" />
             </Button>
             <Button
               variant={viewMode === 'list' ? 'default' : 'ghost'}
               size="sm"
               onClick={() => setViewMode('list')}
-              className={viewMode === 'list' ? 'bg-jafer-gold text-black' : 'text-gray-400 hover:text-white'}
+              className={`text-xs sm:text-sm ${viewMode === 'list' ? 'bg-jafer-gold text-black' : 'text-gray-400 hover:text-white'}`}
               aria-label={translations[language].listView}
             >
-              <List className="w-4 h-4" />
+              <List className="w-3 h-3 sm:w-4 sm:h-4" />
             </Button>
           </div>
         </div>
       </div>
       
       <Tabs defaultValue="popular" className="w-full" onValueChange={setActiveCategory}>
-        <TabsList className="mx-auto flex justify-center mb-8 bg-black/40 p-1 rounded-xl border border-gray-700">
-          <TabsTrigger value="popular" className="data-[state=active]:bg-jafer-gold data-[state=active]:text-black">
+        <TabsList className="mx-auto flex justify-center mb-6 sm:mb-8 bg-black/40 p-1 rounded-xl border border-gray-700 w-full sm:w-auto overflow-x-auto">
+          <TabsTrigger value="popular" className="data-[state=active]:bg-jafer-gold data-[state=active]:text-black text-xs sm:text-sm px-2 sm:px-4 whitespace-nowrap">
             {translations[language].trending}
           </TabsTrigger>
-          <TabsTrigger value="now_playing" className="data-[state=active]:bg-jafer-gold data-[state=active]:text-black">
+          <TabsTrigger value="now_playing" className="data-[state=active]:bg-jafer-gold data-[state=active]:text-black text-xs sm:text-sm px-2 sm:px-4 whitespace-nowrap">
             {translations[language].new}
           </TabsTrigger>
-          <TabsTrigger value="top_rated" className="data-[state=active]:bg-jafer-gold data-[state=active]:text-black">
+          <TabsTrigger value="top_rated" className="data-[state=active]:bg-jafer-gold data-[state=active]:text-black text-xs sm:text-sm px-2 sm:px-4 whitespace-nowrap">
             {translations[language].old}
           </TabsTrigger>
-          <TabsTrigger value="upcoming" className="data-[state=active]:bg-jafer-gold data-[state=active]:text-black">
+          <TabsTrigger value="upcoming" className="data-[state=active]:bg-jafer-gold data-[state=active]:text-black text-xs sm:text-sm px-2 sm:px-4 whitespace-nowrap">
             {translations[language].upcoming}
           </TabsTrigger>
         </TabsList>
@@ -304,28 +306,32 @@ export default function MoviesSection({ language }: MoviesSectionProps) {
         {['popular', 'now_playing', 'top_rated', 'upcoming'].map((category) => (
           <TabsContent key={category} value={category} className="mt-0">
             {isLoading ? (
-              <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              <div className={`grid gap-3 sm:gap-6 ${
+                viewMode === 'grid' 
+                  ? 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5' 
+                  : 'grid-cols-1'
+              }`}>
                 {Array.from({ length: 8 }).map((_, index) => (
                   <div key={index} className="bg-black/40 rounded-xl overflow-hidden border border-gray-800 animate-pulse">
                     <div className="aspect-[2/3] bg-gray-700"></div>
-                    <div className="p-4 space-y-2">
-                      <div className="h-4 bg-gray-700 rounded"></div>
-                      <div className="h-3 bg-gray-700 rounded w-3/4"></div>
+                    <div className="p-3 sm:p-4 space-y-2">
+                      <div className="h-3 sm:h-4 bg-gray-700 rounded"></div>
+                      <div className="h-2 sm:h-3 bg-gray-700 rounded w-3/4"></div>
                     </div>
                   </div>
                 ))}
               </div>
             ) : error ? (
-              <div className="text-center py-12">
-                <p className="text-red-400 text-lg mb-4">Error loading movies: {error.message}</p>
-                <Button onClick={handleRefreshMovies} className="bg-jafer-gold hover:bg-jafer-darkgold text-black">
+              <div className="text-center py-8 sm:py-12">
+                <p className="text-red-400 text-sm sm:text-lg mb-4">Error loading movies: {error.message}</p>
+                <Button onClick={handleRefreshMovies} className="bg-jafer-gold hover:bg-jafer-darkgold text-black text-sm">
                   Try Again
                 </Button>
               </div>
             ) : (
-              <div className={`grid gap-6 ${
+              <div className={`grid gap-3 sm:gap-6 ${
                 viewMode === 'grid' 
-                  ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' 
+                  ? 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5' 
                   : 'grid-cols-1'
               }`}>
                 {filteredMovies(data?.movies).length > 0 ? (
@@ -333,9 +339,9 @@ export default function MoviesSection({ language }: MoviesSectionProps) {
                     <MovieCard key={movie.tmdb_id} movie={movie} />
                   ))
                 ) : (
-                  <div className="col-span-full text-center py-12">
-                    <p className="text-gray-400 text-lg mb-4">{translations[language].noResults}</p>
-                    <Button onClick={handleRefreshMovies} className="bg-jafer-gold hover:bg-jafer-darkgold text-black">
+                  <div className="col-span-full text-center py-8 sm:py-12">
+                    <p className="text-gray-400 text-sm sm:text-lg mb-4">{translations[language].noResults}</p>
+                    <Button onClick={handleRefreshMovies} className="bg-jafer-gold hover:bg-jafer-darkgold text-black text-sm">
                       {translations[language].refreshMovies}
                     </Button>
                   </div>
