@@ -1,11 +1,11 @@
 
 import React, { useState } from 'react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useMovies, useFetchMoviesFromAPI, type Movie } from '@/hooks/useMovies';
 import { useToast } from '@/hooks/use-toast';
 import { Language, moviesTranslations } from '@/utils/moviesTranslations';
 import MoviesFilters from './movies/MoviesFilters';
 import MoviesGrid from './movies/MoviesGrid';
+import CountrySelector from './movies/CountrySelector';
 
 interface MoviesSectionProps {
   language: Language;
@@ -15,9 +15,9 @@ export default function MoviesSection({ language }: MoviesSectionProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [sortBy, setSortBy] = useState<'title' | 'year' | 'rating'>('title');
-  const [activeCategory, setActiveCategory] = useState('popular');
+  const [selectedCountry, setSelectedCountry] = useState('usa');
   
-  const { data, isLoading, error } = useMovies(activeCategory);
+  const { data, isLoading, error } = useMovies(selectedCountry);
   const fetchMoviesMutation = useFetchMoviesFromAPI();
   const { toast } = useToast();
 
@@ -25,7 +25,7 @@ export default function MoviesSection({ language }: MoviesSectionProps) {
 
   const handleRefreshMovies = async () => {
     try {
-      await fetchMoviesMutation.mutateAsync({ category: activeCategory });
+      await fetchMoviesMutation.mutateAsync({ category: selectedCountry });
       toast({
         title: "Success",
         description: "Movies updated successfully!",
@@ -44,12 +44,42 @@ export default function MoviesSection({ language }: MoviesSectionProps) {
     
     let filtered = movies;
     
-    // Filter by country based on active category
-    if (activeCategory === 'usa') {
+    // Filter by country based on selected country
+    if (selectedCountry === 'usa') {
       filtered = filtered.filter(movie => 
         movie.original_language === 'en' || 
         movie.production_companies?.some((company: any) => 
           company.origin_country?.includes('US')
+        )
+      );
+    } else if (selectedCountry === 'france') {
+      filtered = filtered.filter(movie => 
+        movie.original_language === 'fr' || 
+        movie.production_companies?.some((company: any) => 
+          company.origin_country?.includes('FR')
+        )
+      );
+    } else if (selectedCountry === 'japan') {
+      filtered = filtered.filter(movie => 
+        movie.original_language === 'ja' || 
+        movie.production_companies?.some((company: any) => 
+          company.origin_country?.includes('JP')
+        )
+      );
+    } else if (selectedCountry === 'korea') {
+      filtered = filtered.filter(movie => 
+        movie.original_language === 'ko' || 
+        movie.production_companies?.some((company: any) => 
+          company.origin_country?.includes('KR')
+        )
+      );
+    } else if (selectedCountry === 'india') {
+      filtered = filtered.filter(movie => 
+        movie.original_language === 'hi' || 
+        movie.original_language === 'ta' ||
+        movie.original_language === 'te' ||
+        movie.production_companies?.some((company: any) => 
+          company.origin_country?.includes('IN')
         )
       );
     }
@@ -98,35 +128,20 @@ export default function MoviesSection({ language }: MoviesSectionProps) {
         isRefreshing={fetchMoviesMutation.isPending}
       />
       
-      <Tabs defaultValue="popular" className="w-full" onValueChange={setActiveCategory}>
-        <TabsList className="mx-auto flex justify-center mb-6 sm:mb-8 bg-black/40 p-1 rounded-xl border border-gray-700 w-full sm:w-auto overflow-x-auto">
-          <TabsTrigger value="popular" className="data-[state=active]:bg-jafer-gold data-[state=active]:text-black text-xs sm:text-sm px-2 sm:px-4 whitespace-nowrap">
-            {translations.trending}
-          </TabsTrigger>
-          <TabsTrigger value="usa" className="data-[state=active]:bg-jafer-gold data-[state=active]:text-black text-xs sm:text-sm px-2 sm:px-4 whitespace-nowrap">
-            {translations.usa}
-          </TabsTrigger>
-          <TabsTrigger value="top_rated" className="data-[state=active]:bg-jafer-gold data-[state=active]:text-black text-xs sm:text-sm px-2 sm:px-4 whitespace-nowrap">
-            {translations.old}
-          </TabsTrigger>
-          <TabsTrigger value="upcoming" className="data-[state=active]:bg-jafer-gold data-[state=active]:text-black text-xs sm:text-sm px-2 sm:px-4 whitespace-nowrap">
-            {translations.upcoming}
-          </TabsTrigger>
-        </TabsList>
-        
-        {['popular', 'usa', 'top_rated', 'upcoming'].map((category) => (
-          <TabsContent key={category} value={category} className="mt-0">
-            <MoviesGrid
-              movies={filteredMovies(data?.movies)}
-              language={language}
-              viewMode={viewMode}
-              isLoading={isLoading}
-              error={error}
-              onRefresh={handleRefreshMovies}
-            />
-          </TabsContent>
-        ))}
-      </Tabs>
+      <CountrySelector
+        language={language}
+        selectedCountry={selectedCountry}
+        onCountryChange={setSelectedCountry}
+      />
+      
+      <MoviesGrid
+        movies={filteredMovies(data?.movies)}
+        language={language}
+        viewMode={viewMode}
+        isLoading={isLoading}
+        error={error}
+        onRefresh={handleRefreshMovies}
+      />
     </section>
   );
 }
