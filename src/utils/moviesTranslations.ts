@@ -1,0 +1,68 @@
+
+export type Language = 'en' | 'am' | 'or';
+
+export const moviesTranslations = {
+  en: {
+    title: "Explore Our Movie Database",
+    subtitle: "Discover thousands of movies from The Movie Database. Browse by category and find your next favorite film.",
+    trending: "Popular Movies",
+    new: "Now Playing",
+    old: "Top Rated",
+    upcoming: "Coming Soon",
+    search: "Search by title, genre, or year...",
+    min: "min",
+    rating: "Rating",
+    sortBy: "Sort by",
+    viewMode: "View",
+    gridView: "Grid",
+    listView: "List",
+    year: "Year",
+    duration: "Duration",
+    noResults: "No movies found. Try refreshing to fetch new movies.",
+    loadMore: "Load More Movies",
+    refreshMovies: "Refresh Movies",
+    fetchingMovies: "Fetching new movies..."
+  },
+  am: {
+    title: "የፊልም ቤተ-መጽሃፍታችንን ያስሱ",
+    subtitle: "ሺዎች የሚቆጠሩ ፊልሞችን ያግኙ። የሚወዷቸውን ያግኙ እና መደብራችንን በሚጎበኙበት ጊዜ ይጠይቋቸው።",
+    trending: "ተወዳጅ ፊልሞች",
+    new: "አሁን እየታዩ ያሉ",
+    old: "ከፍተኛ ደረጃ ያላቸው",
+    upcoming: "በቅርቡ",
+    search: "በርዕስ፣ በዓይነት፣ ወይም በዓመት ይፈልጉ...",
+    min: "ደቂቃ",
+    rating: "ደረጃ",
+    sortBy: "ደርድር በ",
+    viewMode: "እይታ",
+    gridView: "ፍርግርግ",
+    listView: "ዝርዝር",
+    year: "ዓመት",
+    duration: "ጊዜ",
+    noResults: "ምንም ፊልም አልተገኘም። አዲስ ፊልሞችን ለማምጣት ሪፍሬሽ ያድርጉ።",
+    loadMore: "ተጨማሪ ፊልሞች ጫን",
+    refreshMovies: "ፊልሞችን አድስ",
+    fetchingMovies: "አዲስ ፊልሞችን እናመጣለን..."
+  },
+  or: {
+    title: "Mana Kitaabaa Fiilmii Keenya Sakatta'i",
+    subtitle: "Fiilmii kumaatama argadhu. Filannoo kee argadhuun daawwannaa duka'ana keenyaatti gaafadhu.",
+    trending: "Fiilmii Beekamaa",
+    new: "Amma Mulhatan",
+    old: "Sadarkaa Olaanaa",
+    upcoming: "Dhihaatti Dhufaa",
+    search: "Mata-duree, akaakuu ykn waggaatiin barbaadi...",
+    min: "daqiiqaa",
+    rating: "Sadarkaa",
+    sortBy: "Tartiibiin",
+    viewMode: "Ilaalcha",
+    gridView: "Sarara",
+    listView: "Tarree",
+    year: "Waggaa",
+    duration: "Yeroo",
+    noResults: "Fiilmiin hin argamne. Fiilmii haaraa fiduu refresh godhi.",
+    loadMore: "Fiilmii Dabalataa Fe'i",
+    refreshMovies: "Fiilmii Refresh Godhi",
+    fetchingMovies: "Fiilmii haaraa fidaa jirra..."
+  }
+};
