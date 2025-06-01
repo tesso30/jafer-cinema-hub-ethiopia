@@ -44,6 +44,16 @@ export default function MoviesSection({ language }: MoviesSectionProps) {
     
     let filtered = movies;
     
+    // Filter by country based on active category
+    if (activeCategory === 'usa') {
+      filtered = filtered.filter(movie => 
+        movie.original_language === 'en' || 
+        movie.production_companies?.some((company: any) => 
+          company.origin_country?.includes('US')
+        )
+      );
+    }
+    
     if (searchTerm) {
       const searchLower = searchTerm.toLowerCase();
       filtered = filtered.filter(movie => {
@@ -93,8 +103,8 @@ export default function MoviesSection({ language }: MoviesSectionProps) {
           <TabsTrigger value="popular" className="data-[state=active]:bg-jafer-gold data-[state=active]:text-black text-xs sm:text-sm px-2 sm:px-4 whitespace-nowrap">
             {translations.trending}
           </TabsTrigger>
-          <TabsTrigger value="now_playing" className="data-[state=active]:bg-jafer-gold data-[state=active]:text-black text-xs sm:text-sm px-2 sm:px-4 whitespace-nowrap">
-            {translations.new}
+          <TabsTrigger value="usa" className="data-[state=active]:bg-jafer-gold data-[state=active]:text-black text-xs sm:text-sm px-2 sm:px-4 whitespace-nowrap">
+            {translations.usa}
           </TabsTrigger>
           <TabsTrigger value="top_rated" className="data-[state=active]:bg-jafer-gold data-[state=active]:text-black text-xs sm:text-sm px-2 sm:px-4 whitespace-nowrap">
             {translations.old}
@@ -104,7 +114,7 @@ export default function MoviesSection({ language }: MoviesSectionProps) {
           </TabsTrigger>
         </TabsList>
         
-        {['popular', 'now_playing', 'top_rated', 'upcoming'].map((category) => (
+        {['popular', 'usa', 'top_rated', 'upcoming'].map((category) => (
           <TabsContent key={category} value={category} className="mt-0">
             <MoviesGrid
               movies={filteredMovies(data?.movies)}
