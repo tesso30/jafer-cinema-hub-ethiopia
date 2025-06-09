@@ -81,7 +81,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
             <img 
               src="/lovable-uploads/948eca0f-816c-48f3-b336-4a008276039c.png" 
               alt="Jafe Movies & Electronics Logo" 
-              className="h-8 md:h-10 w-auto"
+              className="h-8 md:h-10 w-8 md:w-10 rounded-full object-cover border-2 border-jafer-gold/20"
             />
           </a>
         </div>
