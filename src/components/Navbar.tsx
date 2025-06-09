@@ -4,6 +4,9 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Menu, X } from "lucide-react";
+import LanguageSelector from './navbar/LanguageSelector';
+import NavigationMenu from './navbar/NavigationMenu';
+import MobileMenu from './navbar/MobileMenu';
 
 type Language = 'en' | 'am' | 'or';
 
@@ -16,30 +19,6 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isMobile = useIsMobile();
-  
-  const translations = {
-    en: {
-      home: 'Home',
-      movies: 'Movies',
-      services: 'Services',
-      howItWorks: 'How It Works',
-      contact: 'Contact'
-    },
-    am: {
-      home: 'መነሻ',
-      movies: 'ፊልሞች',
-      services: 'አገልግሎቶች',
-      howItWorks: 'እንዴት ይሰራል',
-      contact: 'ያግኙን'
-    },
-    or: {
-      home: 'Mana',
-      movies: 'Fiilmii',
-      services: 'Tajaajila',
-      howItWorks: 'Akkamitti Hojjeta',
-      contact: 'Nu Quunnamaa'
-    }
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,12 +39,8 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
-    }
+  const handleMenuItemClick = () => {
+    setIsMenuOpen(false);
   };
 
   return (
@@ -88,32 +63,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
 
         {isMobile ? (
           <div className="flex items-center gap-2">
-            <div className="flex gap-1">
-              <Button
-                variant={language === 'en' ? 'default' : 'outline'} 
-                size="sm"
-                onClick={() => setLanguage('en')}
-                className="h-8 w-8 rounded-full p-0"
-              >
-                EN
-              </Button>
-              <Button
-                variant={language === 'am' ? 'default' : 'outline'} 
-                size="sm"
-                onClick={() => setLanguage('am')}
-                className="h-8 w-8 rounded-full p-0"
-              >
-                አማ
-              </Button>
-              <Button
-                variant={language === 'or' ? 'default' : 'outline'} 
-                size="sm"
-                onClick={() => setLanguage('or')}
-                className="h-8 w-8 rounded-full p-0"
-              >
-                OR
-              </Button>
-            </div>
+            <LanguageSelector language={language} setLanguage={setLanguage} />
             <Button
               variant="ghost"
               size="icon"
@@ -125,104 +75,18 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
           </div>
         ) : (
           <div className="flex items-center gap-4">
-            <nav className="hidden md:flex items-center gap-6">
-              <button 
-                onClick={() => scrollToSection('home')} 
-                className="text-white hover:text-jafer-gold transition-colors"
-              >
-                {translations[language].home}
-              </button>
-              <button 
-                onClick={() => scrollToSection('movies')} 
-                className="text-white hover:text-jafer-gold transition-colors"
-              >
-                {translations[language].movies}
-              </button>
-              <button 
-                onClick={() => scrollToSection('services')} 
-                className="text-white hover:text-jafer-gold transition-colors"
-              >
-                {translations[language].services}
-              </button>
-              <button 
-                onClick={() => scrollToSection('how-it-works')} 
-                className="text-white hover:text-jafer-gold transition-colors"
-              >
-                {translations[language].howItWorks}
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')} 
-                className="text-white hover:text-jafer-gold transition-colors"
-              >
-                {translations[language].contact}
-              </button>
-            </nav>
-            <div className="flex gap-1">
-              <Button
-                variant={language === 'en' ? 'default' : 'outline'} 
-                size="sm"
-                onClick={() => setLanguage('en')}
-                className="h-8 w-8 rounded-full p-0"
-              >
-                EN
-              </Button>
-              <Button
-                variant={language === 'am' ? 'default' : 'outline'} 
-                size="sm"
-                onClick={() => setLanguage('am')}
-                className="h-8 w-8 rounded-full p-0"
-              >
-                አማ
-              </Button>
-              <Button
-                variant={language === 'or' ? 'default' : 'outline'} 
-                size="sm"
-                onClick={() => setLanguage('or')}
-                className="h-8 w-8 rounded-full p-0"
-              >
-                OR
-              </Button>
+            <div className="hidden md:flex items-center gap-6">
+              <NavigationMenu language={language} />
             </div>
+            <LanguageSelector language={language} setLanguage={setLanguage} />
           </div>
         )}
 
-        {/* Mobile Menu */}
-        {isMenuOpen && isMobile && (
-          <div className="fixed inset-0 top-16 bg-black/95 flex flex-col items-center pt-10 animate-fade-in">
-            <nav className="flex flex-col items-center gap-6 text-lg">
-              <button 
-                onClick={() => scrollToSection('home')} 
-                className="text-white hover:text-jafer-gold transition-colors"
-              >
-                {translations[language].home}
-              </button>
-              <button 
-                onClick={() => scrollToSection('movies')} 
-                className="text-white hover:text-jafer-gold transition-colors"
-              >
-                {translations[language].movies}
-              </button>
-              <button 
-                onClick={() => scrollToSection('services')} 
-                className="text-white hover:text-jafer-gold transition-colors"
-              >
-                {translations[language].services}
-              </button>
-              <button 
-                onClick={() => scrollToSection('how-it-works')} 
-                className="text-white hover:text-jafer-gold transition-colors"
-              >
-                {translations[language].howItWorks}
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')} 
-                className="text-white hover:text-jafer-gold transition-colors"
-              >
-                {translations[language].contact}
-              </button>
-            </nav>
-          </div>
-        )}
+        <MobileMenu
+          isMenuOpen={isMenuOpen && isMobile}
+          language={language}
+          onMenuItemClick={handleMenuItemClick}
+        />
       </div>
     </header>
   );
